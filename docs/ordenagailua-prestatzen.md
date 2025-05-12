@@ -7,11 +7,11 @@ Edozein tokitan idatzi dezakegu: bloc de notas, word, eskuz... baina horrelako t
 
 Visual Studio Code bezalako programek kodea idazteko eta hau konpilatzeko guneak eskaintzen dizkigute.
 
-![VSC](/img/vsc-1.png)
+![VSC](img/vsc-1.png)
 
 ## Visual Studio Code
 <hr>
-![VSC-logo](/img/vsc-logo.png)
+![VSC-logo](img/vsc-logo.png)
 
 1. Instalatu VSC.  [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 2. Sortu proiektu bat. 
@@ -22,7 +22,7 @@ Visual Studio Code bezalako programek kodea idazteko eta hau konpilatzeko guneak
 3. Konpiladorea konfiguratu. 
     - Ordenagailuan Python eta pip ([zer da pip?](https://en.wikipedia.org/wiki/Pip_(package_manager))) instalatu. [https://www.python.org/downloads/](https://www.python.org/downloads/)
     - VSC-n Python eta Python Debugger extensioak instalatu. 
-    ![Python configurazioa VSC-n](/img/konp.png)
+    ![Python configurazioa VSC-n](img/konp.png)
 
 Editore gehiago ere existitzen dira, norbaitek probatu nahiko balituzke: Idle, PyCharm, Spyder...
 
@@ -44,7 +44,7 @@ $ C:/nire_karpeta/froga.py
 Kaixo mundua
 ```
 5. VSC-n horrela ikusiko da:
-![Lehen froga](/img/lehen-froga.png)
+![Lehen froga](img/lehen-froga.png)
 
 ## Exekutableak
 Web honetan zehar jarraian ikusten den moduko "exekutableak" aurkituko dituzue. Honek konpiladore bat imitatzen du `Run Python` botoiari ematean, baina soilik kode txiki hauek frogatzeko erabil daiteke. 
