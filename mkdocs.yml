@@ -1,0 +1,78 @@
+site_name: Pythonen oinarrizko kontzeptuak
+theme:
+  name: material  # Usar el tema Material
+  palette:
+    accent: indigo  # El color secundario (para botones y resaltados)
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - toc.integrate
+    - content.code.copy  # Habilita botones de copia
+    - content.tooltips   # Para mejor interactividad
+    - navigation.footer
+    - navigation.bottom
+  config:
+    toc:
+      depth: 1
+    navigation:
+      collapse: true  # Añade esto para comportamiento consistente
+  
+copyright: Copyright & copy; 2025 Lierni Ortiz
+
+markdown_extensions:
+  - md_in_html
+  - pymdownx.emoji
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      pygments_lang_class: true
+      linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: sh
+          class: language-sh
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: python
+          class: language-python
+          format: !!python/name:pymdownx.superfences.fence_div_format  
+        - name: text
+          class: text
+          linenums: false  # ← Desactiva números solo para Python
+  - attr_list
+      
+
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/transformed-blocks.css
+extra_javascript:
+  - https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js
+  - js/auto-run-buttons.js  
+
+plugins:
+  - search
+extra:
+  generator: false
+nav:
+  - SARRERA: index.md
+  - ORDENAGAILUA PRESTATZEN: ordenagailua-prestatzen.md
+  - NOLA IRAKURRI KODEA?: nola-irakurri-kodea.md
+  - KODEAREN EMAITZA IKUSI: inprimatu.md
+  - ALDAGAIAK ESLEITU: aldagaiak-esleitu.md
+  - ALDAGAIAK ULERTU: aldagai-motak.md
+  - ALDAGAI MOTAK:
+    - ZENBAKIAK: zenbakiak.md
+    - STRING: string.md
+    - BOOLEARRAK: boolearrak.md
+    - ZERRENDAK: zerrendak.md
+    - TUPLAK: tuplak.md
+    - HIZTEGIAK: hiztegiak.md
+  - BALDINTZAK: baldintzak.md
+  - BUKLEAK: bukleak.md
+  - FUNTZIOAK: funtzioak.md
+  - MODULUAK, LIBURUTEGIAK eta PAKETEAK: moduluak-lib-pak.md
+  - OBJEKTUEN PROGRAMAZIOA: objektuak.md
+  - WEB BATEN BACKEND SORTZEN: flask.md
