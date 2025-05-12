@@ -2,7 +2,7 @@
 
 Web honetan honetan Python programazio hizkuntzaren oinarri-oinarrizko kontzeptu batzuk ikusiko ditugu.
 
-![Python](/img/python.png)
+![Python](img/python.png)
 
 ## Zer da programazio hizkuntza bat?
 <hr>

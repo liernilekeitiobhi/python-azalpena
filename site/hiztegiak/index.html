@@ -1,0 +1,1345 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tuplak/">
+      
+      
+        <link rel="next" href="../baldintzak/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>HIZTEGIAK - Pythonen oinarrizko kontzeptuak</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/transformed-blocks.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hiztegiak" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pythonen oinarrizko kontzeptuak" class="md-header__button md-logo" aria-label="Pythonen oinarrizko kontzeptuak" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pythonen oinarrizko kontzeptuak
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HIZTEGIAK
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pythonen oinarrizko kontzeptuak" class="md-nav__button md-logo" aria-label="Pythonen oinarrizko kontzeptuak" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Pythonen oinarrizko kontzeptuak
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SARRERA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordenagailua-prestatzen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ORDENAGAILUA PRESTATZEN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nola-irakurri-kodea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NOLA IRAKURRI KODEA?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inprimatu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    KODEAREN EMAITZA IKUSI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aldagaiak-esleitu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ALDAGAIAK ESLEITU
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aldagai-motak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ALDAGAIAK ULERTU
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ALDAGAI MOTAK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            ALDAGAI MOTAK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zenbakiak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ZENBAKIAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STRING
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boolearrak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BOOLEARRAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zerrendak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ZERRENDAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tuplak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TUPLAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    HIZTEGIAK
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    HIZTEGIAK
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hiztegia-ulertzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      HIZTEGIA ULERTZEN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiztegien-sorrera" class="md-nav__link">
+    <span class="md-ellipsis">
+      HIZTEGIEN SORRERA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiztegiko-elementu-kopurua" class="md-nav__link">
+    <span class="md-ellipsis">
+      HIZTEGIKO ELEMENTU KOPURUA
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiztegien-elementuetara-akzeditzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      HIZTEGIEN ELEMENTUETARA AKZEDITZEN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HIZTEGIEN ELEMENTUETARA AKZEDITZEN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#balioetara" class="md-nav__link">
+    <span class="md-ellipsis">
+      BALIOETARA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#giltzetara" class="md-nav__link">
+    <span class="md-ellipsis">
+      GILTZETARA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biak-batera" class="md-nav__link">
+    <span class="md-ellipsis">
+      BIAK BATERA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementu-bat-badago-hiztegian" class="md-nav__link">
+    <span class="md-ellipsis">
+      ELEMENTU BAT BADAGO HIZTEGIAN?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ELEMENTU BAT BADAGO HIZTEGIAN?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#giltza" class="md-nav__link">
+    <span class="md-ellipsis">
+      GILTZA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balioa" class="md-nav__link">
+    <span class="md-ellipsis">
+      BALIOA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiztegiko-elementuak-aldatu" class="md-nav__link">
+    <span class="md-ellipsis">
+      HIZTEGIKO ELEMENTUAK ALDATU
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementu-berriak-sortu" class="md-nav__link">
+    <span class="md-ellipsis">
+      ELEMENTU BERRIAK SORTU
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementuak-ezabatu" class="md-nav__link">
+    <span class="md-ellipsis">
+      ELEMENTUAK EZABATU
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiztegien-hiztegiak" class="md-nav__link">
+    <span class="md-ellipsis">
+      HIZTEGIEN HIZTEGIAK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aukera-gehiago" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUKERA GEHIAGO
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baldintzak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BALDINTZAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bukleak.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BUKLEAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funtzioak.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FUNTZIOAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moduluak-lib-pak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MODULUAK, LIBURUTEGIAK eta PAKETEAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objektuak.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OBJEKTUEN PROGRAMAZIOA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WEB BATEN BACKEND SORTZEN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="hiztegiak">HIZTEGIAK</h1>
+<p>Aurreko atalean zerrendaz osaturiko zerrenda hau sortu dugu:
+<pre class="text"><code>ikasleen_notak = [['Ane',8],['Jon',6.3],['Maider',9.6],['Aitor',3]]</code></pre></p>
+<p>Baina Pythonek badu objektu bat horrelakoak erraztasunez kudeatzeko: hiztegiak. </p>
+<h2 id="hiztegia-ulertzen"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> HIZTEGIA ULERTZEN</h2>
+<hr>
+
+<p>Hiztegia hitz gako bat balio batekin erlazionatzen duen objektu mota da. Horrelakoa da bere sintaxia:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegi_adibidea.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span><span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span><span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Oso luzea bada hainbat lerrotan idatzi dezakegu identazioa errespetatuz:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegi_adibidea_2.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Hiztegiko elementu bakoitzak bi atal ditu: giltza(<em>key</em>) eta balioa(<em>value</em>). Edozein modutara ordena dezakegu, hau da, elementuek ez dute indize jakin bat <code>list</code> eta <code>string</code>etan moduan.</p>
+<p>0.posizioan dagoen elementua inprimatzen saiatzen bagara, zerrendetan bezala, errorea emango digu:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegiko_elementuak_errorea.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div>
+<p>Horren ordez, balioak giltzaren bitartez atera beharko ditugu:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegiko_elementuak_giltza_bidez.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Anek atera duen nota:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">[</span><span class="s1">&#39;Ane&#39;</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Horregatik, oso garrantzitsua da giltzen izenak ez errepikatzea. Bakarrak izan behar dira, bestela Pythonek ez du jakingo errepikatutako giltzen artean zeinen balioa atera behar duen. Balioak arazo gabe errepikatu daitezke ordea: bi ikaslek nota berdina atera badute, ez dago arazorik. </p>
+<div class="admonition tip">
+<p class="admonition-title">TEORIA: Hiztegiak</p>
+<p>Hiztegiak <strong>giltza</strong> bat <strong>balio</strong> batekin lotzen duen objektuak dira. 
+Giltzak bakarrak izan behar dira (ezin dira errepikatu), baina balioak guk nahi dugun modukoak eta motatakoak izan daitezke. Adibidez:
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">hiztegi_adibidea</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;giltza_1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="c1"># Balioa zerrenda da</span>
+                    <span class="s1">&#39;giltza_2&#39;</span><span class="p">:</span> <span class="s1">&#39;kaixo&#39;</span><span class="p">,</span> <span class="c1"># Balioa str da</span>
+                    <span class="s1">&#39;giltza_3&#39;</span><span class="p">:</span> <span class="mf">4.5</span>      <span class="c1"># Balioa float da</span>
+                   <span class="p">}</span>
+</code></pre></div></td></tr></table></div></p>
+</div>
+<h2 id="hiztegien-sorrera"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> HIZTEGIEN SORRERA</h2>
+<hr>
+<p>Zerrendetan moduan hiztegi huts bat sor dezakegu eta kodean zehar betetzen joan:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegi_hutsa_1.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">hiztegia</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c1"># Gero beteko dugu</span>
+</code></pre></div></td></tr></table></div></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegi_hutsa_2.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">hiztegia</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="c1"># Gero beteko dugu</span>
+</code></pre></div></td></tr></table></div>
+<p>Hasieratik balioak ematea ere beste modu bat da, ikasleen_notak aldagaiean egin dugun moduan.</p>
+<p>Zerrenda batetik abiatuz ere sor daiteke <code>dict()</code> funtzioari argumentutzat zerrenda sartuz:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegia_zerrendatik.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">hiztegia</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([[</span><span class="s1">&#39;Ane&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="s1">&#39;Jon&#39;</span><span class="p">,</span><span class="mf">6.3</span><span class="p">],[</span><span class="s1">&#39;Maider&#39;</span><span class="p">,</span><span class="mf">9.6</span><span class="p">],[</span><span class="s1">&#39;Aitor&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hiztegia</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Modu gehiago ere badaude. Momentuan komeni zaigunaren arabera moldatu behar gara beti.</p>
+<h2 id="hiztegiko-elementu-kopurua"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> HIZTEGIKO ELEMENTU KOPURUA</h2>
+<hr>
+
+<p>Beti bezala, <code>len()</code> erabili dezakegu, eta elementu kopurua emango digu. Baina gogoratu hiztegiko elementu bakoitzak bi atal dituela. </p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegia_elementuak.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>Nahiz eta balioak konplikatu, lau giltza badaude lau elementu egongo dira:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegia_elementuak.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Balioak tuplez osatutako hiztegiak dira kasu honetan.</span>
+<span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:[(</span><span class="s1">&#39;1.ebal&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;2.ebal&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;3.ebal&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">)],</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:[(</span><span class="s1">&#39;1.ebal&#39;</span><span class="p">,</span><span class="mf">5.6</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;2.ebal&#39;</span><span class="p">,</span><span class="mf">7.4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;3.ebal&#39;</span><span class="p">,</span><span class="mf">7.5</span><span class="p">)],</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:[(</span><span class="s1">&#39;1.ebal&#39;</span><span class="p">,</span><span class="mf">9.5</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;2.ebal&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;3.ebal&#39;</span><span class="p">,</span><span class="mf">8.3</span><span class="p">)],</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:[(</span><span class="s1">&#39;1.ebal&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;2.ebal&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;3.ebal&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)],</span>
+                 <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="hiztegien-elementuetara-akzeditzen"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> HIZTEGIEN ELEMENTUETARA AKZEDITZEN</h2>
+<hr>
+
+<h5 id="balioetara">BALIOETARA</h5>
+<p>Giltza konkretu baten balioa nahi izanez gero, errazena giltzaren izena erabiltzea da:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegiko_balioak_giltza_bidez.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">[</span><span class="s1">&#39;Ane&#39;</span><span class="p">])</span> <span class="c1"># Aneren balioa:8</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Balio guztiak nahi izanez gero, bakoitza norena den inporta gabe:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegiko_balio_guztiak.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="n">balio_guztiak</span> <span class="o">=</span> <span class="n">ikasleen_notak</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">balio_guztiak</span><span class="p">,</span> <span class="s1">&#39;|MOTA: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">balio_guztiak</span><span class="p">))</span> 
+<span class="c1"># KONTUZ! badirudi zerrenda bat dela, baina ez da.</span>
+<span class="c1"># values() metodoak dict_values objektu berezi bat itzulzen du,</span>
+<span class="c1"># eta hauek ezin dira aldatu edo indexatu zerrenda bat bezala.</span>
+<span class="c1"># Askotan zerrenda bat edukitzea komodoagoa denez:</span>
+<span class="n">balio_guztien_zerrenda</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">balio_guztiak</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zerrendara bihurtuta: &#39;</span><span class="p">,</span> <span class="n">balio_guztien_zerrenda</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<h5 id="giltzetara">GILTZETARA</h5>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">hiztegiko_giltzak.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="n">giltzak</span> <span class="o">=</span> <span class="n">ikasleen_notak</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="c1"># Zerrenda bat dirudi, baina ez da!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">giltzak</span><span class="p">)</span>
+<span class="c1"># Lehengo moduan, zerrenda nahi badugu:</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">giltzak</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<h5 id="biak-batera">BIAK BATERA</h5>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">biak_batera.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="n">giltza_eta_balioa</span> <span class="o">=</span> <span class="n">ikasleen_notak</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="c1"># Zerrenda bat dirudi, baina ez da!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">giltza_eta_balioa</span><span class="p">)</span>
+<span class="c1"># Lehengo moduan, zerrenda nahi badugu:</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">giltza_eta_balioa</span><span class="p">))</span> <span class="c1"># Tuplak zerrenden barnean</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="elementu-bat-badago-hiztegian"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> ELEMENTU BAT BADAGO HIZTEGIAN?</h2>
+<hr>
+
+<h5 id="giltza">GILTZA</h5>
+<p>Giltza hiztegien oinarria izanik <code>giltza in hiztegia</code> galdetzea nahikoa da. 
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">giltza_badago.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jon&#39;</span> <span class="ow">in</span> <span class="n">ikasleen_notak</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mikel&#39;</span> <span class="ow">in</span> <span class="n">ikasleen_notak</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<h5 id="balioa">BALIOA</h5>
+<p>Balioetarako berriz, <code>balioa in hiztegia.values()</code> egin beharko dugu. 
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">balioa_badago.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">8</span> <span class="ow">in</span> <span class="n">ikasleen_notak</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">0</span> <span class="ow">in</span> <span class="n">ikasleen_notak</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="hiztegiko-elementuak-aldatu"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> HIZTEGIKO ELEMENTUAK ALDATU</h2>
+<hr>
+
+<p>Giltza baten balioa aldatzea erraza da, akzeso zuzena baitugu balio horretara giltzaren izena jakinda.
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">balioa_aldatu.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="n">ikasleen_notak</span><span class="p">[</span><span class="s1">&#39;Ane&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># Aneri 4 jarri diogu 8 ordez</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<p><code>update()</code> metodoak berdina egingo du:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">balioa_aldatu.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="n">ikasleen_notak</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">})</span> <span class="c1"># Aneri 4 jarri diogu 8 ordez</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Balioak aldatzerako orduan, originala kontuan hartzea posible da. Adibidez, Aitorri puntu 1 igo nahi diogu jarrera ona edukitzeagatik:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">balioa_eraldatu.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="n">ikasleen_notak</span><span class="p">[</span><span class="s1">&#39;Aitor&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ikasleen_notak</span><span class="p">[</span><span class="s1">&#39;Aitor&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="c1"># Oraingoa = Lehengoa + 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Balio konkretu bati dagokion giltza aldatzea ordea ez da erraza. Hasteko ez dakizu balio hori behin baino gehiagotan errepikatuta ote dagoen, beraz, ez duzu jakingo giltza egokia aldatzen ari ote zaren. Jakinda ere ez dago metodo zuzen bat balioa jakinda giltzara akzeditzeko. Errazena nahi duzun giltza ezabatu, eta berria sortzea da. </p>
+<h2 id="elementu-berriak-sortu"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> ELEMENTU BERRIAK SORTU</h2>
+<hr>
+
+<p>Giltza eta balio berri bat definitzea nahikoa da. </p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">balioa_eraldatu.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="n">ikasleen_notak</span><span class="p">[</span><span class="s1">&#39;Julen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">8.6</span> <span class="c1"># Julen gehitzen dugu hiztegira 8.6 notarekin</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="elementuak-ezabatu"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> ELEMENTUAK EZABATU</h2>
+<hr>
+
+<p>Gogoratu elementuaren dei nagusia giltza bidez egiten dugula. Beraz, elementua ezabatzeko giltzari deituko diogu. Honek bere balioa ere ezabatuko du:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pop.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="n">ikasleen_notak</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Jon&#39;</span><span class="p">)</span> <span class="c1"># Jon giltza eta balioa ezabatu</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Beste modu bat:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">del.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="k">del</span> <span class="n">ikasleen_notak</span><span class="p">[</span><span class="s1">&#39;Jon&#39;</span><span class="p">]</span> <span class="c1"># Jon giltza eta balioa ezabatu</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Hiztegia osorik ere ezabatu dezakegu:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">del.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="k">del</span> <span class="n">ikasleen_notak</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">)</span> <span class="c1"># Errorea emango digu, hiztegia ezabatu baitugu</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Hiztegia hustu dezakegu:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">clear.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">,</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span><span class="mf">9.6</span><span class="p">,</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span><span class="mi">3</span>
+                 <span class="p">}</span>
+<span class="n">ikasleen_notak</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">)</span> <span class="c1"># Hiztegia hutsik egongo da</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="hiztegien-hiztegiak"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> HIZTEGIEN HIZTEGIAK</h2>
+<hr>
+
+<p>Zerrendetan moduan, hiztegi bat beste baten barnean sar dezakegu. Bi kortxete erabiliz, balio konkretutaraino iritsi ahalko gara. </p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">clear.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ikasleen_notak</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Ane&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Mate&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;Euskara&#39;</span><span class="p">:</span><span class="mi">9</span><span class="p">},</span>
+                  <span class="s1">&#39;Jon&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Mate&#39;</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Euskara&#39;</span><span class="p">:</span><span class="mf">9.5</span><span class="p">},</span>
+                  <span class="s1">&#39;Maider&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Mate&#39;</span><span class="p">:</span><span class="mf">8.3</span><span class="p">,</span><span class="s1">&#39;Euskara&#39;</span><span class="p">:</span><span class="mf">7.9</span><span class="p">},</span>
+                  <span class="s1">&#39;Aitor&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Mate&#39;</span><span class="p">:</span><span class="mf">4.5</span><span class="p">,</span><span class="s1">&#39;Euskara&#39;</span><span class="p">:</span><span class="mf">6.3</span><span class="p">},</span>
+                 <span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aneren mateko nota:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">[</span><span class="s1">&#39;Ane&#39;</span><span class="p">][</span><span class="s1">&#39;Mate&#39;</span><span class="p">])</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Aneren nota guztiak:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ikasleen_notak</span><span class="p">[</span><span class="s1">&#39;Ane&#39;</span><span class="p">])</span> 
+</code></pre></div></td></tr></table></div>
+<h2 id="aukera-gehiago"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> AUKERA GEHIAGO</h2>
+<p>Hiztegien metodo gehiago:
+<a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">https://docs.python.org/3/tutorial/datastructures.html#dictionaries</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../tuplak/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TUPLAK">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                TUPLAK
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../baldintzak/" class="md-footer__link md-footer__link--next" aria-label="Next: BALDINTZAK">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                BALDINTZAK
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright & copy; 2025 Lierni Ortiz
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "toc.integrate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.bottom"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+      
+        <script src="../js/auto-run-buttons.js"></script>
+      
+    
+  </body>
+</html>
