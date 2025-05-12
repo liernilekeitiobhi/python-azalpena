@@ -1,0 +1,149 @@
+/* Button styling */
+.run-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px 0 20px 0; /* More space below */
+  cursor: pointer;
+  font-family: 'Roboto Mono', monospace;
+  display: block;
+  width: fit-content;
+}
+
+/* Code block container */
+div.highlight {
+  position: relative;
+  margin-bottom: 5px; /* Reduce default margin */
+}
+
+/* Output block */
+.terminal-output {
+  margin-top: 5px !important; /* Reduce space above output */
+}
+
+/* Syntax highlighting classes */
+.gp { color: #4CAF50 !important; } /* Prompt */
+.nb { color: #FF9800 !important; } /* Command (python) */
+.n { color: #E91E63 !important; }  /* Code */
+.go { color: #BDBDBD !important; } /* Output */
+
+.run-code {
+  margin-top: 0.5em;
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.exec-output {
+  background: black;
+  color: white;
+  padding: 1em;
+  margin-top: 1em;
+  font-family: monospace;
+  border-radius: 5px;
+}
+.run-code {
+  display: inline-block;
+  margin-bottom: 1em;
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 0.4em 0.8em;
+  font-size: 0.9em;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.run-code:hover {
+  background: #444;
+}
+.exec-output {
+  background: black;
+  color: white;
+  padding: 1em;
+  margin-top: 1em;
+  font-family: monospace;
+  border-radius: 5px;
+}
+/* Execution output styling */
+.execution-output {
+  display: none;
+  background: #000;
+  color: #fff;
+  padding: 1em;
+  margin: 0.5em 0 1.5em 0;
+  border-radius: 4px;
+  font-family: 'Roboto Mono', monospace;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+/* Run button styling */
+.run-code {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 5px 0;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: background 0.3s;
+}
+
+.run-code:hover {
+  background: #3e8e41;
+}
+
+.run-code:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Code block container */
+.highlight {
+  margin-bottom: 0 !important;
+}
+
+/* Run button */
+.run-code {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 10px 0 5px 0;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: background 0.2s;
+}
+
+.run-code:hover {
+  background: #3e8e41;
+}
+
+.run-code:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Output area */
+.execution-output {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: monospace;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  display: none;
+}
+
+.execution-output.error {
+  color: #ff6b6b;
+}

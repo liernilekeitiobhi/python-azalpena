@@ -1,0 +1,1094 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../aldagaiak-esleitu/">
+      
+      
+        <link rel="next" href="../zenbakiak/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>ALDAGAIAK ULERTU - Pythonen oinarrizko kontzeptuak</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/transformed-blocks.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aldagaien-portaera-ulertu" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pythonen oinarrizko kontzeptuak" class="md-header__button md-logo" aria-label="Pythonen oinarrizko kontzeptuak" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pythonen oinarrizko kontzeptuak
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ALDAGAIAK ULERTU
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pythonen oinarrizko kontzeptuak" class="md-nav__button md-logo" aria-label="Pythonen oinarrizko kontzeptuak" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Pythonen oinarrizko kontzeptuak
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SARRERA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordenagailua-prestatzen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ORDENAGAILUA PRESTATZEN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nola-irakurri-kodea/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NOLA IRAKURRI KODEA?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inprimatu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    KODEAREN EMAITZA IKUSI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aldagaiak-esleitu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ALDAGAIAK ESLEITU
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    ALDAGAIAK ULERTU
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    ALDAGAIAK ULERTU
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nola-jakin-ze-aldagai-mota-den" class="md-nav__link">
+    <span class="md-ellipsis">
+      NOLA JAKIN ZE ALDAGAI MOTA DEN?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodoak-eta-funtzioak-aldagaietan" class="md-nav__link">
+    <span class="md-ellipsis">
+      METODOAK eta FUNTZIOAK ALDAGAIETAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="METODOAK eta FUNTZIOAK ALDAGAIETAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zergatik-da-garrantzitsua-funtzioak-eta-metodoak-bereiztea" class="md-nav__link">
+    <span class="md-ellipsis">
+      ZERGATIK DA GARRANTZITSUA FUNTZIOAK ETA METODOAK BEREIZTEA?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ZERGATIK DA GARRANTZITSUA FUNTZIOAK ETA METODOAK BEREIZTEA?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodoak" class="md-nav__link">
+    <span class="md-ellipsis">
+      METODOAK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funtzioak" class="md-nav__link">
+    <span class="md-ellipsis">
+      FUNTZIOAK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-place-vs-berria-itzultzea" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-place vs. Berria itzultzea:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#non-daude-aldagaiak-kodea-exekutatzen-den-bitartean" class="md-nav__link">
+    <span class="md-ellipsis">
+      NON DAUDE ALDAGAIAK KODEA EXEKUTATZEN DEN BITARTEAN?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jarri-praktikan" class="md-nav__link">
+    <span class="md-ellipsis">
+      JARRI PRAKTIKAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JARRI PRAKTIKAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1ariketa" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.ARIKETA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    ALDAGAI MOTAK
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            ALDAGAI MOTAK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zenbakiak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ZENBAKIAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    STRING
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boolearrak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BOOLEARRAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zerrendak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ZERRENDAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tuplak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    TUPLAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hiztegiak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HIZTEGIAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baldintzak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BALDINTZAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bukleak.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BUKLEAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../funtzioak.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FUNTZIOAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moduluak-lib-pak/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MODULUAK, LIBURUTEGIAK eta PAKETEAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objektuak.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OBJEKTUEN PROGRAMAZIOA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WEB BATEN BACKEND SORTZEN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="aldagaien-portaera-ulertu">ALDAGAIEN PORTAERA ULERTU</h1>
+<p>Kodearen helburuaren arabera, aldagai mota ezberdinak beharko ditugu. Orain arte bi ikusi ditugu: zenbakiak eta tesua, baina gehiago daude. </p>
+<ul>
+<li>Zenbakiak</li>
+<li>String</li>
+<li>Boolearrak</li>
+<li>Zerrendak</li>
+<li>Tuplak</li>
+<li>Hiztegiak</li>
+<li>...</li>
+</ul>
+<p>Gainera, oso garrantzitsua da kode guztian zehar sortutako aldagaiak nolakoak diren jakitea, bestela oso zaila da erroreak identifikatzea.</p>
+<h2 id="nola-jakin-ze-aldagai-mota-den"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> NOLA JAKIN ZE ALDAGAI MOTA DEN?</h2>
+<hr>
+<p><code>type()</code> funtzioarekin:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">aldagai_motak.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.43</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;Kaixo, ni string (testua) naiz&#39;</span>
+<span class="n">d</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ni&#39;</span><span class="p">,</span> <span class="s1">&#39;zerrenda&#39;</span><span class="p">,</span> <span class="s1">&#39;naiz&#39;</span><span class="p">]</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;ni&#39;</span><span class="p">,</span> <span class="s1">&#39;tupla&#39;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ni&#39;</span><span class="p">:</span><span class="s1">&#39;hiztegia&#39;</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a-ren mota: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># int</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b-ren mota: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="c1"># float</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c-ren mota: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="c1"># str</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;d-ren mota: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">))</span> <span class="c1"># bool</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;e-ren mota: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="c1"># list</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f-ren mota: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">))</span> <span class="c1"># tuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g-ren mota: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">g</span><span class="p">))</span> <span class="c1"># dict</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="metodoak-eta-funtzioak-aldagaietan"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> METODOAK eta FUNTZIOAK ALDAGAIETAN</h2>
+<p>Honen ondoren, aldagai motak ikusten hasiko gara banan-banan. Baina garrantzitsua da hasi aurretik ulertzea Pythonek metodo eta funtzio prediseinatu (<em>built-in</em>) batzuk dituela, aldagai motaren arabera erabili ditzakegunak. </p>
+<p>Adibidez, <code>len()</code> <strong>funtzioak</strong> luzeera itzuliko dit:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">funtzioak.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Kaixo&#39;</span><span class="p">))</span> <span class="c1"># Kaixo hitzaren karaktere kopurua itzuliko dit.</span>
+</code></pre></div></td></tr></table></div>
+<p><code>upper()</code> <strong>metodoak</strong> berriz, hitz bat maiuskulaz jarriko dit:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">metodoak.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kaixo&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span> <span class="c1"># Kaixo hitza maiuskulaz jarriko da</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="zergatik-da-garrantzitsua-funtzioak-eta-metodoak-bereiztea">ZERGATIK DA GARRANTZITSUA FUNTZIOAK ETA METODOAK BEREIZTEA?</h3>
+<h5 id="metodoak">METODOAK</h5>
+<p>Metodo bat aldagai mota bati lotuta dago beti. Hau da <code>str</code> batentzat pentsatua dagoen metodoa ezin dugu <code>list</code> batentzat erabili. </p>
+<p>Metodoa erabiltzeko <code>aldagaia.metodoaren_izena(argumentuak)</code> formatua erabiltzen da. Batzuetan ez dago argumentu beharrik eta orduan parentesia hutsik uzten da. Adibidez, <code>upper()</code> metodoa testuentzat soilik da. </p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">metodoak.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kaixo&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span> <span class="c1"># Kaixo hitza maiuskulaz jarriko da</span>
+</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">errorea.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">type</span><span class="p">([</span><span class="s1">&#39;kaixo&#39;</span><span class="p">,</span><span class="s1">&#39;mundua&#39;</span><span class="p">])</span> <span class="c1"># list</span>
+<span class="nb">print</span><span class="p">([</span><span class="s1">&#39;kaixo&#39;</span><span class="p">,</span><span class="s1">&#39;mundua&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span> <span class="c1"># Esango digu zerrenda batek ez duela upper metodoa</span>
+
+<span class="c1"># &#39;list&#39; object has no attribute &#39;upper&#39;</span>
+</code></pre></div></td></tr></table></div>
+<h5 id="funtzioak">FUNTZIOAK</h5>
+<p>Funtzio bat unibertsala da. Edozein aldagai motari aplikatu diezaiokegu orokorrean.
+<code>funtzioaren_izena(aldagaiak)</code> formatua jarraitzen dute. Guk ikasiko dugu gure funtzio propioak sortzen, baina Pythonek guk nahi duguna egiten duen bat badauka zergatik ez erabili? <em>built-in functions</em> deitzen zaie. </p>
+<p>Ondorengo adibidean <code>len()</code> funtzioa erabiltzen dugu <code>str</code> baterako lehendabizi eta <code>list</code> baterako gero. Hau da, funtzioa bi aldagai mota ezberdinei aplikatu ahal izan diegu. </p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">funtzioak.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">kaixo_hitzaren_luzeera</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Kaixo&#39;</span><span class="p">)</span> <span class="c1"># Kaixo hitzaren karaktere kopurua itzuliko dit.</span>
+<span class="n">zerrenda_luzeera</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Zerrendaren luzeera itzuliko dit</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kaixo_hitzaren_luzeera</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zerrenda_luzeera</span><span class="p">)</span> 
+</code></pre></div></td></tr></table></div>
+<h5 id="in-place-vs-berria-itzultzea">In-place vs. Berria itzultzea:</h5>
+<p>Metodo askok objektua aldatzen dute (in-place), funtzioek berriz, kopia bat itzultzen dute (berria). Hau ulertzeko azter dezagun ordenatzeko balio duten ondorengoak:</p>
+<ul>
+<li><code>sorted()</code> funtzioa</li>
+<li><code>sort()</code> zerrendentzako metodoa.</li>
+</ul>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">sorted()_funtzioa.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">zerrenda</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">zerrenda_ordenatua</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">zerrenda</span><span class="p">)</span> <span class="c1"># Funtzioak zerrenda ordenatu du eta kopia bat eman digu guk aldagai batean gorde dezakeguna</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zerrenda ordenatua: &#39;</span><span class="p">,</span><span class="n">zerrenda_ordenatua</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zerrenda originala: &#39;</span><span class="p">,</span><span class="n">zerrenda</span><span class="p">)</span> <span class="c1"># Zerrenda originala berdin mantentzen da</span>
+</code></pre></div></td></tr></table></div>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">sort()_metodoa_gaizki.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">zerrenda</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">zerrenda_ordenatua</span> <span class="o">=</span> <span class="n">zerrenda</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># Metodoak zerrenda ordenatu du, baina ez digu kopia bat ematen, beraz ezin dugu aldagai batean gorde</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zerrenda ordenatua: &#39;</span><span class="p">,</span> <span class="n">zerrenda_ordenatua</span><span class="p">)</span> <span class="c1"># hutsik egongo da</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zerrenda originala: &#39;</span><span class="p">,</span><span class="n">zerrenda</span><span class="p">)</span> <span class="c1"># Metodoa aplikatzeak zerrenda originala aldatu du</span>
+</code></pre></div></td></tr></table></div>
+<p>HORRELA EGIN BEHARKO LITZATEKE:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">sort()_metodoa_ondo.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">zerrenda</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">zerrenda</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># Zerrenda originala ordenatzen dugu hemen</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zerrenda</span><span class="p">)</span> <span class="c1"># Zerrenda originala galdu dugu</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Metodoak erabiltzea oso erosoa da datu originalak behar ez ditugunean. Baina datu originala galdu nahi ez dugunean ezin ditugu erabili, edota aldagai auxiliar batean gorde behar dugu originala. Badaude metodo batzuk kopia itzultzen dutenak, horregatik da hain garrantzitsua dokumentazioa irakurtzea, ulertzea eta interpretatzen jakitea. Gainera, beti egin ditzakegu frogak metodo eta funtzio bakoitzak nola funtzionatzen duen ikasteko.</p>
+<div class="admonition note">
+<p class="admonition-title">Dokumentazioa: Funtzioak eta Metodoak</p>
+<p>Pythonen <em>built-in types</em> eta bakoitzaren metodoak: <a href="https://docs.python.org/3/library/stdtypes.html">https://docs.python.org/3/library/stdtypes.html</a></p>
+<p>Pythonen <em>built-in</em> funtzioak: <a href="https://docs.python.org/3/library/functions.html">https://docs.python.org/3/library/functions.html</a></p>
+</div>
+<h2 id="non-daude-aldagaiak-kodea-exekutatzen-den-bitartean"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> NON DAUDE ALDAGAIAK KODEA EXEKUTATZEN DEN BITARTEAN?</h2>
+<p>Aldagaiak memorian gordetzen dira kodea exekutatzen den bitartean. </p>
+<ul>
+<li>
+<p><strong>Memoria Nagusia (RAM)</strong>:
+    Aldagaiak programa martxan dagoen bitartean RAM-ean daude.
+    Adibidez: <code>kolorea = "urdina"</code> → <code>"urdina"</code> RAM-eko leku batean gordetzen da. Aldagai gehiegi edo handiegiak erabiliz gero, programa moteldu daiteke, edota memoria nahikoa ez badugu, funtzionatzeari utzi diezaioke. Horregatik garrantzitsua da ahalik eta kode optimizatuena idaztea.</p>
+</li>
+<li>
+<p><strong>CPU-ko Erregistroak</strong>:
+    Aldagaiak maiz erabiltzen badira, CPU-ak bere erregistroetan gorde ditzake (azkarrago exekutatzeko).</p>
+</li>
+</ul>
+<p>Programa amaitzen denean RAM garbitzen da: aldagai guztiak ezabatzen dira eta beste programa batzuentzat lekua askatzen da. Programa amaitzean aldagaien bat gorde nahi badugu, datu-base bat edo fitxategi bat erabili beharko dugu.</p>
+<p>Hau ulertzeko bi aldagaien balioen trukaketa nola egiten den adierazten duen adibide bat aztertuko dugu:</p>
+<p>Demagun hasieran <code>a</code> eta <code>b</code> aldagaiak ditugula beraien balioekin: <code>'A'</code> eta <code>'B'</code>, hurrenez hurren. Baina alderantziz izatea nahi dugu. Hau da, amaieran <code>a = 'B'</code> eta <code>b = 'A'</code></p>
+<p>Ezin dugu hau egin, ikusi azpiko kodea eta irudia batera:
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">aldagaien_trukaketa_gaizki.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span> <span class="c1"># Hasierako esleipena</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span> <span class="c1"># Hasierako esleipena</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="c1"># b-ri &#39;A&#39; jarri diogu</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="c1"># a-ri b jarri diogu, baina b momentu honetan &#39;A&#39; da</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b-ren balio berria: &#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a-ren balio berria: &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<p><img alt="trukaketa-gaizki" src="../img/trukaketa-gaizki.png" /></p>
+<p>Trukaketa egiteko auxiliar bat erabili beharrean gaude:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">aldagaien_trukaketa_ondo.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span> <span class="c1"># Hasierako esleipena</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span> <span class="c1"># Hasierako esleipena</span>
+<span class="n">aux</span> <span class="o">=</span> <span class="n">b</span> <span class="c1"># aux sortu b-ren baliora apuntatzen</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="c1"># b-ri &#39;A&#39; jarri diogu</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">aux</span> <span class="c1"># aux aldagaiean b-ren balioa (&#39;B&#39;) gordeta utzi dugu, beraz a horra aldatu</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b-ren balio berria: &#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a-ren balio berria: &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="trukaketa-ondo" src="../img/trukaketa-ondo.png" /></p>
+<h2 id="jarri-praktikan"><img alt="➡️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/27a1.png" title=":arrow_right:" /> JARRI PRAKTIKAN</h2>
+<hr>
+
+<h5 id="1ariketa">1.ARIKETA</h5>
+<p>Kopiatu ondoko kodea zure ordenagailuan:
+<pre class="text"><code>import random
+a = random.randrange(100)
+b = random.randrange(100)
+c = random.randrange(100)
+
+print('ALDAGAIEN BALIO ORIGINALA')
+print('a: ', a, ', b: ', b, ', c: ', c) 
+
+# Zure kodea hemen joango da
+
+print('ALDAGAIEN BALIO ALDATUA')
+# Hemen inprimatuko duzu</code></pre>
+Kode honek a, b eta c aldagaiei 1etik 100rako ausazko zenbaki bat esleitzen die. Zuk egindako kodearen bitartez hauek trukatzea lortu behar duzu. Hau da: </p>
+<ul>
+<li>lehen a-ren balioa zena orain b-rena izango da.</li>
+<li>lehen b-ren balioa zena orain c-rena izango da.</li>
+<li>lehen c-ren balioa zena orain a-rena izango da</li>
+</ul>
+<p>Espero den emaitza horrelako zerbait izango da (ezin dut zehazki esan pythonek ausaz aukeratuko baititu balioak):
+<pre class="language-sh"><code>ALDAGAIEN BALIO ORIGINALA
+a: 16, b: 65, c: 33
+ALDAGAIEN BALIO ALDATUA
+a: 33, b: 16, c: 65</code></pre></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../aldagaiak-esleitu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ALDAGAIAK ESLEITU">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                ALDAGAIAK ESLEITU
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../zenbakiak/" class="md-footer__link md-footer__link--next" aria-label="Next: ZENBAKIAK">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                ZENBAKIAK
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright & copy; 2025 Lierni Ortiz
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "toc.integrate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.bottom"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+      
+        <script src="../js/auto-run-buttons.js"></script>
+      
+    
+  </body>
+</html>
